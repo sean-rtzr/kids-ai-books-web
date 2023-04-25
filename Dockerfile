@@ -4,6 +4,7 @@ RUN mkdir -p /usr/src/kids-ai-books-web
 WORKDIR /usr/src/kids-ai-books-web
 COPY . .
 
+RUN npm install -g pm2
 RUN npm ci && npm cache clean --force
 RUN npm run build
 
@@ -12,4 +13,4 @@ ENV NUXT_PORT=32720
 
 EXPOSE 32720 
 
-ENTRYPOINT ["node", ".output/server/index.mjs"]
+ENTRYPOINT ["npm", "run", "start"]
