@@ -4,7 +4,7 @@
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev --port=32720",
-		"start": "pm2-runtime start .output/server/index.mjs -- --port=32720",
+		"start": "pm2-runtime start ./ecosystem.config.js",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview --port=32720",
 		"postinstall": "nuxt prepare"
